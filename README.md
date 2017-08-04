@@ -1,5 +1,5 @@
 
-=======
+
 	#proteomics utilities	
 =======
         Copyright (C) 2017, WANG Limited.                              
@@ -16,8 +16,10 @@
 
 		
  
-#####script/IDconvert.pl 20170804
-=======		
+
+=======	
+		script/IDconvert.pl 20170804	
+		————————————————————————————————————————————————
 		out file, seperated with comma, can be opened by excel
 		query,subject,Identities,query match length,mismatches,gap openings,query start,query end,sbject start,sbject end,E Value,Score
 		blastp -evalue 0.000001
