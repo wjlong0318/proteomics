@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+
+=======
 	#proteomics utilities	
 =======
         Copyright (C) 2017, WANG Limited.                              
@@ -14,9 +15,9 @@
 		GNU General Public License for more details.    
 
 		
-======= 
+ 
 #####script/IDconvert.pl 20170804
-		
+=======		
 		out file, seperated with comma, can be opened by excel
 		query,subject,Identities,query match length,mismatches,gap openings,query start,query end,sbject start,sbject end,E Value,Score
 		blastp -evalue 0.000001
@@ -24,4 +25,4 @@
 		Usage:   if you do not use parameter,you could put two fasta files and IDconvert.pl file into same folder,then double-click
 		Example: perl IDconvert.pl input
 				perl IDconvert.pl
-======= 
+ 
