@@ -1,5 +1,5 @@
 ##############################################################################
-## Copyright (C) 2017, WANG Limited.                               #
+## Copyright (C) 2017, WANG Limited.                                         #
 ##                                                                           #
 ## This script is free software. You can redistribute and/or                 #
 ## modify it under the terms of the GNU General Public License               #
@@ -21,5 +21,5 @@ script/IDconvert.pl 20170804
 #Usage:   perl IDconvert.pl [filepath]
 #Usage:   if you do not use parameter,you could put two fasta files and IDconvert.pl file into same folder,then double-click
 #Example: perl IDconvert.pl input
-         perl IDconvert.pl
+#         perl IDconvert.pl
 ################################################################################
