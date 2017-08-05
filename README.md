@@ -2,8 +2,8 @@
 
 	#proteomics utilities	
 =======Copyright
-        #Copyright (C) 2017, WANG Limited.#                              
-        
+
+		Copyright (C) 2017, WANG Limited.
 		contact:wjlong0318@163.com
 		
 		This script is free software. You can redistribute and/or                 
@@ -20,8 +20,8 @@
  
 
 =======	IDconvert.pl
-		#script/IDconvert.pl 20170804#	
-		
+
+		script/IDconvert.pl 20170804		
 		function:fasta file blast fasta file for id matching
 				 out file, seperated with comma, can be opened by excel
 		out file format:
@@ -36,8 +36,8 @@
 			     perl IDconvert.pl
 				 
 ======= AllMerge.pl
-        #script/AllMerge.pl 20170804#	
-		
+
+		script/AllMerge.pl 20170804
 		function:merging mutilfiles(CSV) bases on left colume
 		version:1.01
 		Usage:   perl AllMerge.pl [filepath]
@@ -48,8 +48,8 @@
                  perl Almerge.pl
 
 ======= csv2fasta.pl
-        #script/csv2fasta.pl 20170804#
-		
+
+		script/csv2fasta.pl 20170804
 		function:convert csv to fasta
 		version:1.01
 		Usage:   perl csv2fasta.pl [filepath]
@@ -60,8 +60,8 @@
                  perl csv2fasta.pl
 		
 ======= fasta2csv.pl
-        #script/fasta2csv.pl 20170804#
-		
+
+		script/fasta2csv.pl 20170804
 		function:convert fasta to csv
 		version:1.01
 		Usage:   perl fasta2csv.pl [filepath]
@@ -71,9 +71,9 @@
 		Example: perl fasta2csv.pl input
                  perl fasta2csv.pl
 
-======= md5.pl 
-        #script/md5.pl 20170804#
-		
+======= md5.pl
+
+		script/md5.pl 20170804
 		function:caculate MD5 value of all files in  current folder
 		version:1.01		
 		Usage:put all files and MD5.pl file into same folder,double-click
