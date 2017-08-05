@@ -3,7 +3,9 @@
 	#proteomics utilities	
 =======
         #Copyright (C) 2017, WANG Limited.#                              
-                                                                          
+        
+        contact:wjlong0318@163.com
+		
 		This script is free software. You can redistribute and/or                 
 		modify it under the terms of the GNU General Public License              
 		as published by the Free Software Foundation; either version 2           
