@@ -1,22 +1,73 @@
-#####################################
-#从protein.fasta读取序列中,写入csv中#
-#####################################
+#############################################################################
+# Copyright (C) 2017, WANG Limited.                                         #
+#                                                                           #
+# This script is free software. You can redistribute and/or                 #
+# modify it under the terms of the GNU General Public License               #
+# as published by the Free Software Foundation; either version 2            #
+# of the License or, (at your option), any later version.                   #
+#                                                                           #
+# These modules are distributed in the hope that they will be useful,       #
+# but WITHOUT ANY WARRANTY; without even the implied warranty of            #
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the              #
+# GNU General Public License for more details.                              #
+#############################################################################
+#############################################################################
+
 use strict;
+use 5.010;
+use File::Spec;
+use Data::Dumper;
 use Time::Piece;
 use Time::Seconds;
 
-#输出初始时间
+
+print "####################################################\n";
+print "## fasta2csv 1.01                                  ##\n";
+print "## Date:20170804                                  ##\n";
+print "## Copyright\@2017 WANG                            ##\n";
+print "####################################################\n";
+&usage;
+print "-----------------------------------------------------\n";
+print "------------------   START   ------------------------\n";
 my $start_time = localtime;    
-print "Start time is $start_time";
+my $end_time;
+eval{
+my $FILE_PATTERN;
+if (defined($ARGV[0])) { 
+    $FILE_PATTERN = "$ARGV[0]\\*.fasta";
+}elsif(!defined($ARGV[0])){
+    $FILE_PATTERN = "*.fasta";
+}
+my @files=glob($FILE_PATTERN);
+die "we can't find fasta files: $!" if( @files < 1 );
+
+
+
+for my $file (@files){
+   &fasta2csv($file);
+}
+
+sub fasta2csv2{
+    my ($file)=@_;
+	my %ref;
+	open my $in, '<',$file || die "Can't open $file: $!";
+    my $code = do { local $/; <$in> };
+    my @records= split(">",$code);
+	foreach my $item (@records){
+	    my @lines= split("\n",$item);
+		my $key= shift @lines;
+		my $value=join("",@lines);
+		$ref{$key}=$value;
+	}
+    return %ref
+}
+
+
 
 #声明变量
 my $protein_num=-1;
 my $protein_name;
 my $seq;
-my @files=glob '*.fasta';
-for my $file (@files){
-   &fasta2csv($file);
-}
 
 sub fasta2csv{
 my ($file)=@_;
@@ -52,10 +103,29 @@ print RESULT "$protein_num,$protein_name,$seq\n";
 close RESULT;
 close SOURCE;
 }
-my $end_time = localtime;
+
+sub usage {
+  print "# function:convert fasta to csv\n"; 
+  print "# version:1.01\n";
+  print "# Usage:   perl fasta2csv.pl [filepath]\n";
+  print "# Usage:   if you do not use parameter,you could put all csv files and fasta2csv.pl file into same folder,double-click\n";
+  print "# Example: perl fasta2csv.pl input\n";
+  print "#          perl fasta2csv.pl\n";
+}
+
+};
+
+my $others;
+if($@){
+$others=$@;
+print $others;
+}
+$end_time = localtime;
 my $s = $end_time - $start_time;
-print "The end time is $end_time";    
-print "The time of wasting  is: ", $s->minutes,"minites.";
-print "\nThe $protein_num  proteins had alreadly writed \nplease press anykey continue~~~~~~";
-<> 
- 
+print "\n---------------------  REPORT  -----------------------\n";
+print "Start time is $start_time\n";
+print "The end time is $end_time\n";    
+print "The used time is: ", $s->minutes," minites.\n";
+print "---------------------    END   -----------------------\n";
+
+<>

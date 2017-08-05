@@ -21,7 +21,7 @@ my %root;
 foreach my $file(readdir DH){
     my $temfile=File::Spec->catfile($mydir,$file);
     #print "one file in $mydir is ",$temfile,"\n";
-	if ($temfile=~/.+csv/){
+	if ($temfile=~/.+\.csv/){
 	    #$temfile=~s/\.csv//;
         $filenames{$temfile}=0;  		
 	 }
