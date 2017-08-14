@@ -80,3 +80,12 @@
 		function:caculate MD5 value of all files in  current folder
 		version:1.01		
 		Usage:put all files and MD5.pl file into same folder,double-click
+
+======= add_motif.pl		
+ 
+		script/add_motif.pl 20170814
+		function:add motif for sequence windows basing on last column\n";
+		Usage:   perl add_motif.pl [filepath]\n";
+		Usage:   if you do not use parameter,you could put csv files and add_motif.pl file into same folder\n";
+		Example: perl add_motif.pl input\n";
+				 perl add_motif.pl\n";
